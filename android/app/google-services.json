@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "99342906846",
+    "project_id": "project-onq",
+    "storage_bucket": "project-onq.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99342906846:android:58a48d21fa8b26465f994f",
+        "android_client_info": {
+          "package_name": "com.yorik.project_onq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99342906846-dvmrbrnkb2m2fccji3fe3uurgq41geb2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2vPzF6Sma0pygmtJyZMGqXNjHMd1XMVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99342906846-dvmrbrnkb2m2fccji3fe3uurgq41geb2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
