@@ -18,3 +18,21 @@ class GoToMainPage extends PageEvent {
   @override
   List<Object> get props => [];
 }
+
+class GoToRegistrationPage extends PageEvent {
+  final RegistrationData registrationData;
+
+  GoToRegistrationPage(this.registrationData);
+
+  @override
+  List<Object> get props => [];
+}
+
+class GoToUserConfirmationPage extends PageEvent {
+  final RegistrationData registrationData;
+
+  GoToUserConfirmationPage(this.registrationData);
+
+  @override
+  List<Object> get props => [];
+}

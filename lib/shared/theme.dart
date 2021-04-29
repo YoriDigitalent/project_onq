@@ -10,6 +10,8 @@ TextStyle blackTextFont = GoogleFonts.raleway()
     .copyWith(color: Colors.black, fontWeight: FontWeight.w500);
 TextStyle whiteTextFont = GoogleFonts.raleway()
     .copyWith(color: Colors.white, fontWeight: FontWeight.w500);
+TextStyle orangeTextFont = GoogleFonts.raleway()
+    .copyWith(color: Colors.orange, fontWeight: FontWeight.w500);
 
 TextStyle blackNumberFont = GoogleFonts.raleway()
     .copyWith(color: Colors.black);

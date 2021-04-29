@@ -8,7 +8,5 @@ class UserModel extends Equatable {
   UserModel(this.id, this.email, {this.nama});
 
   @override
-  // ignore: todo
-  // TODO: implement props)
   List<Object> get props => [id, nama, email];
 }
