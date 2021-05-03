@@ -18,4 +18,7 @@ part 'sign_in_page.dart';
 part 'splash_page.dart';
 part 'sign_up_page.dart';
 part 'user_confirmation_page.dart';
-part 'information_page.dart';
+part 'home_page.dart';
+part 'map_page.dart';
+part 'jadwalku_page.dart';
+part 'panduan_page.dart';

@@ -41,3 +41,18 @@ class OnUserConfirmationPage extends PageState {
   @override
   List<Object> get props => [];
 }
+
+class OnMapPage extends PageState {
+  @override
+  List<Object> get props => [];
+}
+
+class OnJadwalkuPage extends PageState {
+  @override
+  List<Object> get props => [];
+}
+
+class OnPanduanPage extends PageState {
+  @override
+  List<Object> get props => [];
+}

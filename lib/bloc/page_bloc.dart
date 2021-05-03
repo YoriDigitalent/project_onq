@@ -25,6 +25,12 @@ class PageBloc extends Bloc<PageEvent, PageState> {
       yield OnRegistrationPage(event.registrationData);
     } else if (event is GoToUserConfirmationPage) {
       yield OnUserConfirmationPage(event.registrationData);
+    } else if (event is GoToMapPage) {
+      yield OnMapPage();
+    } else if (event is GoToJadwalkuPage) {
+      yield OnJadwalkuPage();
+    } else if (event is GoToPanduanPage) {
+      yield OnPanduanPage();
     }
   }
 }

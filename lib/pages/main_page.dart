@@ -37,8 +37,8 @@ class _MainPageState extends State<MainPage> {
               });
             },
             children: <Widget>[
-              InformationPage(),
-              Center(child: Text("Gak Tau Harus diisi apa")),
+              HomePage(),
+              JadwalkuPage(),
             ],
           ),
           Align(
@@ -111,8 +111,7 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
                 onPressed: () {
-                  context.bloc<UserBloc>().add(SignOut());
-                  AuthServices.signOut();
+                  context.bloc<PageBloc>().add(GoToMapPage());
                 },
               ),
             ),
@@ -129,12 +128,12 @@ class BottomNavBarClipper extends CustomClipper<Path> {
     Path path = Path();
 
     path.lineTo(size.width / 2 - 28, 0);
-    path.quadraticBezierTo(size.width / 2 - 28, 0, size.width / 2, 33);
+    path.quadraticBezierTo(size.width / 2 - 28, 33, size.width / 2, 33);
     path.quadraticBezierTo(size.width / 2 + 28, 33, size.width / 2 + 28, 0);
     path.lineTo(size.width, 0);
     path.lineTo(size.width, size.height);
     path.lineTo(0, size.height);
-    //path.close();
+    path.close();
 
     return path;
   }
