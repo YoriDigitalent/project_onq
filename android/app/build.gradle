@@ -25,9 +25,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+    
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 28
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -40,6 +41,17 @@ android {
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+
+        // ...
+        // Set the properties within `local.properties` into a `Properties` class so that values
+        // within `local.properties` (e.g. Maps API key) are accessible in this file.
+        Properties properties = new Properties()
+        if (rootProject.file("local.properties").exists()) {
+            properties.load(rootProject.file("local.properties").newDataInputStream())
+        }
+
+        // Inject the Maps API key into the manifest
+        manifestPlaceholders = [ MAPS_API_KEY : properties.getProperty("MAPS_API_KEY", "") ]
     }
 
     buildTypes {
@@ -60,4 +72,5 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:27.1.0')
     //kotlin version (-ktx)
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    //implementation 'com.google.android.gms:play-services-maps:17.0.0'
 }

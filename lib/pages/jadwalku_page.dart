@@ -1,8 +1,21 @@
 part of 'pages.dart';
 
-class JadwalkuPage extends StatelessWidget {
+class JadwalkuPage extends StatefulWidget {
+  @override
+  _JadwalkuPageState createState() => _JadwalkuPageState();
+}
+
+class _JadwalkuPageState extends State<JadwalkuPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Jadwal Anda adalah"));
+    return WillPopScope(
+        onWillPop: () async {
+          context.bloc<PageBloc>().add(GoToMainPage());
+
+          return;
+        },
+        child: Center(
+          child: Text("Jadwalku adalah"),
+        ));
   }
 }

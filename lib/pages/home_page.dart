@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
               ),
               color: Colors.orange,
               onPressed: () {
-                context.bloc<PageBloc>().add(GoToMapPage());
+                context.bloc<PageBloc>().add(GoToMapPage(GoToMainPage()));
               }),
         ),
         Container(

@@ -79,7 +79,7 @@ class _MainPageState extends State<MainPage> {
                           )),
                       BottomNavigationBarItem(
                           // ignore: deprecated_member_use
-                          title: Text("Informasi",
+                          title: Text("Jadwalku",
                               style: GoogleFonts.raleway(
                                   fontSize: 13, fontWeight: FontWeight.w600)),
                           icon: Container(
@@ -87,7 +87,7 @@ class _MainPageState extends State<MainPage> {
                             height: 20,
                             child: Image.asset((bottomNavBarIndex == 1)
                                 ? "assets/informationOrange.png"
-                                : "assets/informationGrey.png"),
+                                : "assets/informationGray.png"),
                           ))
                     ]),
               ),
@@ -111,7 +111,7 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
                 onPressed: () {
-                  context.bloc<PageBloc>().add(GoToMapPage());
+                  context.bloc<PageBloc>().add(GoToMapPage(GoToMainPage()));
                 },
               ),
             ),

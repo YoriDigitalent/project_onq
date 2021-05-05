@@ -38,8 +38,12 @@ class GoToUserConfirmationPage extends PageEvent {
 }
 
 class GoToMapPage extends PageEvent {
+  final PageEvent pageEvent;
+
+  GoToMapPage(this.pageEvent);
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [pageEvent];
 }
 
 class GoToJadwalkuPage extends PageEvent {

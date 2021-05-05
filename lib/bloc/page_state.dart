@@ -43,8 +43,12 @@ class OnUserConfirmationPage extends PageState {
 }
 
 class OnMapPage extends PageState {
+  final PageEvent pageEvent;
+
+  OnMapPage(this.pageEvent);
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [pageEvent];
 }
 
 class OnJadwalkuPage extends PageState {
