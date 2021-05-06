@@ -6,31 +6,43 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-  GoogleMapController mapController;
+  final Map<String, Marker> _markers = {};
 
-  final LatLng _center = const LatLng(45.521563, -122.677433);
-
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
+  Future<void> _onMapCreated(GoogleMapController controller) async {
+    final lokasiKantor = await lokasiBank.loadJSON();
+    setState(() {
+      _markers.clear();
+      for (final lok in lokasiKantor.lokasi) {
+        final marker = Marker(
+          markerId: MarkerId(lok.placename),
+          position: LatLng(lok.latitude, lok.longitude),
+          infoWindow: InfoWindow(
+            title: lok.placename,
+            snippet: lok.branch,
+          ),
+        );
+        _markers[lok.placename] = marker;
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () async {
-        context.bloc<PageBloc>().add(GoToMainPage());
+        onWillPop: () async {
+          context.bloc<PageBloc>().add(GoToMainPage());
 
-        return;
-      },
-      child: Container(
-        child: GoogleMap(
-          onMapCreated: _onMapCreated,
-          initialCameraPosition: CameraPosition(
-            target: _center,
-            zoom: 11.0,
+          return;
+        },
+        child: Scaffold(
+          body: GoogleMap(
+            onMapCreated: _onMapCreated,
+            initialCameraPosition: CameraPosition(
+              target: LatLng(41.2878742, 36.326696),
+              zoom: 6,
+            ),
+            markers: _markers.values.toSet(),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
